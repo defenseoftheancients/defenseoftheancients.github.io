@@ -13,19 +13,20 @@
 })();
 
 (()=>{
-    let review__btn = document.getElementsByClassName('review__btn')[0];
-    review__btn.addEventListener('click', 
+    let project__btn = document.getElementsByClassName('project__btn')[0];
+    project__btn.addEventListener('click', 
         function () {
-            let review__btn = document.getElementsByClassName('review__btn')[0];
-            let review__listitem = document.getElementsByClassName('review__listitem');
-            let load = document.querySelector('.review__btn i');
+            let project__btn = document.getElementsByClassName('project__btn')[0];
+            let project__listitem = document.getElementsByClassName('project__listitem');
+            let load = document.querySelector('.project__btn i');
             load.style.display = 'block';
             setTimeout(function () {
-                for(let i = 3; i <= 5;i++) {
-                    
-                    review__listitem[i].style.transform = 'scale(1)';
+                for(let i = 6; i <= 8;i++) {
+                    project__listitem[i].style.position = 'relative';
+                    project__listitem[i].style.opacity = '1';
+                    project__listitem[i].style.transform = 'scale(1)';
                 }
-                review__btn.style.display = 'none';
+                project__btn.style.display = 'none';
             },1000);
     })
 })();
