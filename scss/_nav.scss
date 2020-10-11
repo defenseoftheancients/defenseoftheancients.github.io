@@ -1,0 +1,54 @@
+.nav {
+    position: fixed;
+    right: 25px;
+    top: 15%;
+    z-index: 2;
+    #nav__toggle > i {
+        background: $main-bg-color;
+        color: white;
+        cursor: pointer;
+        @include icon(40px);
+        @include trans-normal(0.5s);
+        &:hover {
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {100% {-webkit-transform: rotate(-360deg);}}
+    }
+    &__box {
+        position: absolute;
+        transform: scale(0);
+        right: 0;
+        top: 50px;
+        width: 200px;
+        border-radius: 5px;
+        background: $main-bg-color;
+        @include trans-normal(0.5s);
+
+        .nav__listitem {
+            position: relative;
+            line-height: 2.5;
+            padding-left: 15px;
+            a {
+                display: inline-block;
+                color: white;
+                padding: 0;
+                margin-left: 0;
+                @include trans-normal(0.5s);
+                &:hover {
+                    transform: translateX(15px);
+                }
+            }
+            i {
+                margin-right: 20px;
+                width: 18px;
+                height: 18px;
+                text-align: center;
+                color: white;
+            }
+        }
+        
+    }
+    @media screen and (max-width: 768px) {
+        & {display: none;}
+    }
+}

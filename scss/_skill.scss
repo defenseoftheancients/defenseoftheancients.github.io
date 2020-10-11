@@ -1,0 +1,71 @@
+.skill {
+    @include borderbot();
+    &__heading {
+        @include heading();
+        margin: 0 0 150px 0;
+        > h2 {
+            margin-bottom: 50px;
+            @include h2();
+        }
+        p {font-size: 20px;}
+    }
+    > ul {
+        width: 100%;
+        justify-content: space-around;
+        @include flex(row);
+    }
+    &__box {
+        position: relative;
+        text-align: center;
+        flex-basis: 22%;
+        height: 100%;
+        padding: 50px 0;
+        line-height: 2.5;
+        background-color: rgba(0,0,0,0.8);
+        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+        border-radius: 11px;
+        @include trans-normal(0.5s);
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: block;
+            width: 100%;
+            height: 5px;
+            transform: scale(0);
+            background-color: $main-bg-color;
+            border-radius: 0 0 100px 100px;
+            @include trans-normal(0.5s);
+        }
+        &:hover {
+            transform: translateY(-10px);
+            &::after {transform: scale(1);} 
+        }
+    }
+    &__logo {
+         > i {
+            font-size: 60px;
+            color: $secondary-text-color;
+        }  
+        > h3 {
+            font-size: 25px;
+            color: white;
+            text-transform: uppercase;
+        }
+    }
+    &__list {
+       line-height: 1.8;
+       .skill__listitem {color: white;}
+    }
+    @media screen and (max-width: 1024px) {
+        &__box {
+            flex-basis: 44%;
+            margin-bottom: 15px;
+        }
+        &__heading {margin: 0 0 50px 0;}
+        &__logo > h3 {font-size: 20px;}
+        &__list .skill__listitem {font-size: 14px;}
+    }
+    @media screen and (max-width: 600px) {&__box {flex-basis: 90%;}}
+}

@@ -1,0 +1,41 @@
+@mixin flex($flex-direction) {
+    display: flex;
+    flex-flow: wrap $flex-direction;
+}
+@mixin trans-normal($time) {
+    transition: all $time;
+}
+@mixin icon($value) {
+    width: $value;
+    height: $value;
+    line-height: $value;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+@mixin borderbot() {
+    position: relative;
+    width: 100%;
+    padding: 50px 0;
+    border-bottom: 1px solid #ebebeb;
+}
+@mixin center($position, $top) {
+    position: $position;
+    top: $top;
+    left: 50%;
+    transform: translate(-50%, -$top);
+}
+@mixin heading() {
+    width: 100%;
+    position: relative;
+    text-align: center; 
+}
+@mixin h2() {
+    font-size: 40px;
+    font-family: $secondary-font;
+    &::after {
+        content: '.';
+        color: #00cec9;
+        font-size: 45px;
+    }
+}

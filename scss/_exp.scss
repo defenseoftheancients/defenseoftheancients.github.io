@@ -1,0 +1,98 @@
+.exp {
+    @include borderbot();
+    &__heading {
+        @include heading();
+        > h2 {
+            margin-bottom: 150px;
+            @include h2();
+        }
+    }
+    &__box {
+        position: relative;
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    &__timeline {
+        padding: 50px 0;
+        @include flex(row);
+        justify-content: center;
+    }
+    &__time {
+        width: 30%;
+        display: inline-block;
+        > span {position: relative;}
+        &::after {
+            z-index: 1;
+            content: '';
+            position: absolute;
+            padding: 5px;
+            margin-top: 5px;
+            left: calc(24% + 2px);
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            border: 1px solid $main-bg-color;
+        }
+    }
+    &__details {width: 70%;}
+    &__col {
+        position: absolute;
+        width: 1px;
+        top: 0;
+        bottom: 0;
+        left: 25%;
+        background-color: $main-bg-color;
+        &::before {
+            content: '';
+            position: absolute;
+            padding: 4px;
+            z-index: 1;
+            left: -3px;
+            background-color: $main-bg-color;
+            border-radius: 50%;
+        }
+        &::after {
+            @extend .exp__col::before;
+            bottom: 0;
+        }
+    }
+    @media screen and (max-width: 1024px)  {
+        &__time::after {
+            margin-top: 5px;
+            left: calc(24% + 1px);
+        }
+    }
+    @media screen and (max-width: 768px) {
+        &__heading > h2 {margin-bottom: 50px;}
+        &__time {
+            width: 45%;
+            &::after {left: calc(42.5% + 2px);}
+        }
+        &__details {
+            width: 50%;
+            padding-left: 15px;
+            > h3 {font-size: 15px;}
+            > p {font-size: 13px;}
+        }
+        &__col {left: 44%;}
+    }
+    @media screen and (max-width: 600px) { 
+        &__box {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 0 0 50px;
+        }
+        &__time {
+            width: 100%;
+            &::after {left: 15px;}
+        }
+        &__details {
+            width: 100%;
+            padding-left: 0px;
+        }
+        &__col {left: 20px;}
+    }
+}

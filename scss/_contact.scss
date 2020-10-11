@@ -1,0 +1,98 @@
+.contact {
+    @include borderbot();
+    &__heading {
+        @include heading();
+        margin-bottom: 100px;
+        > h2 {
+            @include h2();
+        }
+    }
+    &__box {
+        @include flex(row);
+        justify-content: space-between;
+        padding: 0 15px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    &__left {
+        flex-basis: 43%;
+        > * {margin: 30px 0;}
+        > h2 {
+            font-weight: lighter;
+            font-family: $secondary-font;
+            font-size: 40px;
+        }
+        > p {padding-right: 80px;}
+    } 
+    &__full > p {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    &__listitem i {
+        color: $secondary-text-color;
+        padding-right: 10px;
+        @include icon(40px);
+    }
+    &__right {
+        flex-basis: 43%;
+        h3 {
+            font-size: 30px;
+            margin: 30px 0;
+            font-weight: lighter;
+        }
+    }
+    @media screen and (max-width:1024px) {
+        &__heading { margin-bottom: 25px;}
+        &__left, &__right {flex-basis: 100%;}
+        &__left > p, &__left > h2, &__para, &__right > h3 {
+            padding-right: 0px;
+            text-align: center;
+        }
+       
+    }
+    @media screen and (max-width: 768px) {  
+        &__left {
+            > * {margin: 15px 0;}
+            > h2 {font-size: 30px;}
+            > p {font-size: 14px;}
+        }
+        &__full > p {font-size: 18px;}
+        &__listitem {font-size: 13px;}
+    }
+}
+#formvalid {
+    position: relative;
+    @include flex(row);
+    > * {
+        width: 100%;
+        &:not(.contact__submit) {
+            margin: 15px 0;
+            padding: 15px;
+            outline: none;
+            border: 1px solid black;
+            font-size: 16px;
+            transition: all 0.5s;
+        }
+        &:focus {
+            transform: scale(1.009);
+            box-shadow: 0px 8px 15px 0px rgba(0,0,0,.2);
+        }
+    }
+    > textarea {
+        border: 1px solid black;
+        resize: none;
+    }
+    .contact__submit {text-align: right;}
+    input[type="submit"] {
+        background: transparent;
+        border: 1px solid black;
+        display: inline-block;
+        padding: 15px 25px;
+        font-size: 16px;
+        cursor: pointer;
+        @include trans-normal(0.3s);
+        box-shadow: 0px 8px 15px 0px rgba(0,0,0,.2);
+        &:hover {color: $secondary-text-color;}
+    }
+
+}

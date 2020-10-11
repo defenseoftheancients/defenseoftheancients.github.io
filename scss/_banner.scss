@@ -1,0 +1,115 @@
+.banner {
+    background: url(../img/hero.jpg), rgba(0,0,0,0.5);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    width: 100%;
+    height: 800px;
+    position: relative;
+}
+.banner__intro {
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    transform: translate(-20%, -50%);
+    user-select: none;
+}
+.banner__listitem > * {color: white;}
+.banner__listitem > .banner__name {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    font-size: 60px;
+    font-family: $secondary-font;
+}
+
+.banner__special {
+    width: 100%;
+    font-size: 13px;
+    vertical-align: text-top;
+    position: relative;
+    color: $secondary-text-color;
+}
+.banner__special::after {
+    content: '';
+    display: block;
+    width: 8px;
+    text-align: center;
+    bottom: 0;
+    left: 1.5px;
+    height: 2px;
+    background-color: $main-bg-color;
+    position: absolute;
+}
+.banner__listitem >  .banner__name > span:nth-child(1) {margin-left: 30px;} 
+.banner__listitem >  .banner__name > span:nth-child(2) {margin-top: -20px;}
+.banner__slash{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+.banner__slash > span:nth-child(1) {
+    font-size: 50px;
+    vertical-align: middle;
+}
+
+.banner__social {
+    color: $main-txt-color;
+    margin: 0;
+    position: absolute;
+    left: 20%;
+    top: 75%;
+    transform: translate(-20%, -75%);
+    user-select: none;
+}
+.banner__social > ul {
+    display: flex;
+    flex-direction: row;
+}
+.banner__social .banner__listitem {margin-right: 15px;}
+
+.banner__listitem > a > i {
+    background-color: $main-bg-color;
+    color: white;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+    border-radius: 50%;
+    transition: all 0.5s;
+    box-shadow: 0px 0px 28px -5px rgba(170,170,170,1);
+}
+.banner__listitem > a > i:hover {
+    background-color: white;
+    color: $secondary-text-color;
+    transform: translateY(-10px);
+}
+@media screen and (max-width: 1024px) {
+    .banner {height: 500px;}
+    .banner__social {margin-top: 50px;}
+}
+@media screen and (max-width: 768px) {
+    .banner__listitem > .banner__name {font-size: 40px;}
+    .banner__slash {
+        letter-spacing: 3px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+    .banner__social {margin-top: 25px;}
+    .banner__slash > span:nth-child(1) {font-size: 25px;}
+}
+@media screen and (max-width: 600px) {
+    main {margin-top: 50px;}
+    .banner {height: 400px;}
+    .banner__intro {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .banner__social {
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -80%);
+    }
+    .banner__listitem > .banner__name {font-size: 30px;}
+}
